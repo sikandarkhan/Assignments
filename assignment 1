@@ -1,1 +1,14 @@
+Q1.  What do you mean by arrays give one example of array and how you can declared an array?
+A1. An array is a data structure that allows you to store multiple values of the same type in a single variable.
+    Instead of creating many separate variables, you can store all related data in one array.
+    For ex int numbers[3] = {10, 20, 30};
+#include <iostream>
+using namespace std;
 
+int main() {
+    int marks[5] = {85, 90, 78, 88, 76}; // declare and initialize array
+    for (int i = 0; i < 5; i++) {
+        cout << "Mark " << i+1 << ": " << marks[i] << endl;
+    }
+    return 0;
+}

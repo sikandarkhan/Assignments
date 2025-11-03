@@ -1,14 +1,95 @@
-Q1.  What do you mean by arrays give one example of array and how you can declared an array?
-A1. An array is a data structure that allows you to store multiple values of the same type in a single variable.
-    Instead of creating many separate variables, you can store all related data in one array.
-    For ex int numbers[3] = {10, 20, 30};
-#include <iostream>
-using namespace std;
+Q1. What do you mean by arrays give one example of array and how you can declared an array?
+A1. An array in C is a collection of elements of the same data type stored in contiguous memory locations.It allows us to store multiple values in a single variable instead of declaring many separate variables.
+    For ex:- int numbers[3] = {10, 20, 30};
+
+#include <stdio.h>
 
 int main() {
-    int marks[5] = {85, 90, 78, 88, 76}; // declare and initialize array
-    for (int i = 0; i < 5; i++) {
-        cout << "Mark " << i+1 << ": " << marks[i] << endl;
-    }
+    int numbers[3] = {10, 20, 30}; // Declaration and initialization of array
+
+    printf("The elements of the array are:\n");
+    printf("%d\n", numbers[0]);
+    printf("%d\n", numbers[1]);
+    printf("%d\n", numbers[2]);
+
     return 0;
 }
+
+Q2. What do you mean by functions? Write the types of functions and give one example in code of each type.
+A2. A function is a block of code that performs a specific task.It helps make your program modular, reusable, and easier to understand.
+    Types of Functions in C:-
+    In C, functions are mainly divided into two types:
+    1.Library Functions (or Built-in Functions)
+    2.User-defined Functions
+
+#include <stdio.h>   // For printf() - a library function
+#include <math.h>    // For sqrt() - another library function
+
+// --- User-defined function ---
+void greet() {
+    printf("Hello! This is a user-defined function.\n");
+}
+
+int main() {
+    greet(); // Calling user-defined function
+
+    double number = 25.0;
+    double result = sqrt(number); // Calling library function (from math.h)
+
+    printf("The square root of %.2f is %.2f\n", number, result);
+
+    return 0;
+}
+
+Q3. What do you mean by Pointers ? Write a code how you can initialise the pointer.
+A3. In C language, a pointer is a variable that stores the memory address of another variable. Instead of holding a value directly, a pointer “points” to the location in memory where that value is stored.
+
+#include <stdio.h>
+
+int main() {
+    int x = 10;      // normal variable
+    int *ptr;        // pointer variable declaration
+
+    ptr = &x;        // initialize pointer with address of x
+
+    printf("Value of x: %d\n", x);
+    printf("Address of x: %p\n", &x);
+    printf("Pointer stores address: %p\n", ptr);
+    printf("Value pointed by ptr: %d\n", *ptr);
+
+    return 0;
+}
+
+Q4. Arrays in C can be classified into:
+    1. 1D Array (Single-dimensional array): Stores elements in a single line (like a list).
+    2. 2D Array (Two-dimensional array): Stores elements in a table/matrix format (rows & columns).
+
+#include <stdio.h>
+
+int main() {
+    // --- 1D Array ---
+    int marks[5] = {85, 90, 78, 88, 76};
+    printf("1D Array elements:\n");
+    for(int i = 0; i < 5; i++) {
+        printf("%d ", marks[i]);
+    }
+    printf("\n\n");
+
+    // --- 2D Array ---
+    int matrix[2][3] = {
+        {1, 2, 3},
+        {4, 5, 6}
+    };
+    printf("2D Array elements:\n");
+    for(int i = 0; i < 2; i++) {
+        for(int j = 0; j < 3; j++) {
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+Q5. Explain the types of Operators in code.
+

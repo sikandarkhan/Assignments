@@ -14,6 +14,10 @@ int main() {
 
     return 0;
 }
+Output: The elements of the array are:
+        10
+        20
+        30
 
 Q2. What do you mean by functions? Write the types of functions and give one example in code of each type.
 A2. A function is a block of code that performs a specific task.It helps make your program modular, reusable, and easier to understand.
@@ -40,6 +44,8 @@ int main() {
 
     return 0;
 }
+Output: Hello! This is a user-defined function.
+        The square root of 25.00 is 5.00
 
 Q3. What do you mean by Pointers ? Write a code how you can initialise the pointer.
 A3. In C language, a pointer is a variable that stores the memory address of another variable. Instead of holding a value directly, a pointer “points” to the location in memory where that value is stored.
@@ -59,6 +65,10 @@ int main() {
 
     return 0;
 }
+Output: Value of x: 10
+        Address of x: 0x7ffee2f8a9cc
+        Pointer stores address: 0x7ffee2f8a9cc
+        Value pointed by ptr: 10
 
 Q4. Arrays in C can be classified into:
     1. 1D Array (Single-dimensional array): Stores elements in a single line (like a list).
@@ -90,6 +100,170 @@ int main() {
 
     return 0;
 }
+Output: 1D Array elements:
+        85 90 78 88 76
+        
+        2D Array elements:
+        1 2 3 
+        4 5 6
 
 Q5. Explain the types of Operators in code.
+A5. Operators are symbols used to perform operations on variables and values.
+    C has several types of operators:
+1. Arithmetic Operators: Used for mathematical operations: +, -, *, /, %
+#include <stdio.h>
+
+int main() {
+    int a = 10, b = 5;
+
+    printf("a + b = %d\n", a + b);
+    printf("a - b = %d\n", a - b);
+    printf("a * b = %d\n", a * b);
+    printf("a / b = %d\n", a / b);
+    printf("a %% b = %d\n", a % b); // modulo operator
+
+    return 0;
+}
+Output: a + b = 15
+        a - b = 5
+        a * b = 50
+        a / b = 2
+        a % b = 0
+
+2. Relational Operators: Used to compare two values: ==, !=, <, >, <=, >=
+    Returns 1 (true) or 0 (false).
+#include <stdio.h>
+
+int main() {
+    int a = 10, b = 5;
+
+    printf("a == b: %d\n", a == b);
+    printf("a != b: %d\n", a != b);
+    printf("a < b: %d\n", a < b);
+    printf("a > b: %d\n", a > b);
+    printf("a <= b: %d\n", a <= b);
+    printf("a >= b: %d\n", a >= b);
+
+    return 0;
+}
+Output: a == b → 0
+        a != b → 1
+        a > b  → 1
+        a < b  → 0
+        a >= b → 1
+        a <= b → 0 
+
+3. Logical Operators: Used to combine conditional statements: && (AND), || (OR), ! (NOT)
+#include <stdio.h>
+
+int main() {
+    int a = 1, b = 0;
+
+    printf("a && b: %d\n", a && b); // AND
+    printf("a || b: %d\n", a || b); // OR
+    printf("!a: %d\n", !a);         // NOT
+
+    return 0;
+}
+Output: a && b: 0
+        a || b: 1
+        !a: 0
+
+4. Assignment Operators: Used to assign values to variables: =, +=, -=, *=, /=, %=
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+
+    a += 5; // equivalent to a = a + 5
+    printf("a += 5 → %d\n", a);
+
+    a -= 3; // equivalent to a = a - 3
+    printf("a -= 3 → %d\n", a);
+
+    a *= 2; // equivalent to a = a * 2
+    printf("a *= 2 → %d\n", a);
+
+    a /= 4; // equivalent to a = a / 4
+    printf("a /= 4 → %d\n", a);
+
+    a %= 3; // equivalent to a = a % 3
+    printf("a %%= 3 → %d\n", a);
+
+    return 0;
+}
+Output: a += 5 → 15
+        a -= 3 → 12
+        a *= 2 → 24
+        a /= 4 → 6
+        a %= 3 → 0
+
+5. Bitwise Operators: Bitwise operators perform operations on binary representations of numbers.
+#include <stdio.h>
+
+int main() {
+    int a = 5, b = 3; // Binary: a=0101, b=0011
+
+    printf("a & b = %d\n", a & b);   // AND
+    printf("a | b = %d\n", a | b);   // OR
+    printf("a ^ b = %d\n", a ^ b);   // XOR
+    printf("~a = %d\n", ~a);         // NOT
+    printf("a << 1 = %d\n", a << 1); // Left shift
+    printf("a >> 1 = %d\n\n", a >> 1); // Right shift
+
+    return 0;
+}
+Output: a & b = 1
+        a | b = 7
+        a ^ b = 6
+        ~a = -6
+        a << 1 = 10
+        a >> 1 = 2
+
+6. Increment and Decrement Operators: These operators are used to increase or decrease a variable's value by 1.
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+
+    printf("Initial a = %d\n", a);
+    printf("Post-increment (a++) = %d\n", a++);
+    printf("After post-increment, a = %d\n", a);
+    printf("Pre-increment (++a) = %d\n", ++a);
+    printf("Post-decrement (a--) = %d\n", a--);
+    printf("After post-decrement, a = %d\n", a);
+    printf("Pre-decrement (--a) = %d\n\n", --a);
+
+    return 0;
+}
+Output: Initial a = 10
+        Post-increment (a++) = 10
+        After post-increment, a = 11
+        Pre-increment (++a) = 12
+        Post-decrement (a--) = 12
+        After post-decrement, a = 11
+        Pre-decrement (--a) = 10
+
+7. Conditional (Ternary) Operator: The ternary operator (? :) is used to make quick decisions — it returns one value if a condition is true, and another if it’s false.
+#include <stdio.h>
+
+int main() {
+    int a = 10, b = 20;
+    int result;
+
+    result = (a > b) ? a : b;
+    printf("Greater value between a and b = %d\n", result);
+
+    return 0;
+}
+Output: Greater value between a and b = 20
+
+
+
+
+
+
+
+
+
 
